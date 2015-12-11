@@ -9,8 +9,8 @@ int main(){
 const double a=10.0;
 const double b=28.0;
 const double c=8.0/3.0;
-const double dt= 0.01;
-const double N = 50000.0/dt;
+const double dt= 0.1;
+const double N = 100.0/dt;
 
 
 double k1[3];
@@ -29,6 +29,7 @@ g[0]=1;    //x-Wert
 g[1]=1;    //y-Wert
 g[2]=1;    //z-Werte
 
+cout << 0 << "\t" << g[0] << "\t" << g[1] << "\t" << g[2] << endl;
 
 
 for (int i=0; i<N ;i++){
@@ -70,7 +71,7 @@ return 0;
 
 void f(double* gt, double* g, const double a, const double b, const double c){
 gt[0]=a*(g[1]-g[0]);
-gt[1]=g[0]*(b-g[2])*g[1];
+gt[1]=g[0]*(b-g[2])-g[1];
 gt[2]=g[0]*g[1]-c*g[2];
 }
 
